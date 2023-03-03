@@ -1,18 +1,17 @@
 /*  We'll use Actix as our web framework.
     You can use whatever you want like
-    (Actix, Axum, Rocket) but Actix is My fav.
+    (Actix, Axum, Rocket, salvo, xitca, may-minihttp, and more....) but Actix is My fav.
 */
 
-use std::io::Result;
-
 //  Importing The crates
+use std::io::Result; // for Result return type
+
 use actix_web::{
-    get,          /* route handler */
-    web,          /* Essentials helper functions and types for application registration */
-    App,          /* The top-level builder for an Actix Web application */
-    HttpResponse, /* An outgoing response */
-    HttpServer,   /* An Http Server */
-    Responder,    /* Trait implemented by types that can be converted to an HTTP response */
+    get,        /* route handler */
+    web,        /* Essentials helper functions and types for application registration */
+    App,        /* An outgoing response */
+    HttpServer, /* An Http Server */
+    Responder,  /* Trait implemented by types that can be converted to an HTTP response */
 };
 
 //  Main should be async so we can use async/await feature
@@ -56,3 +55,7 @@ async fn main() -> Result<()> {
 async fn ext(name: web::Path<String>) -> impl Responder {
     format!("Hello {name}!")
 }
+
+/*
+    For more check out https://github.com/RizeKishimaro/Tracebook
+*/

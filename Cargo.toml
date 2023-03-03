@@ -1,2 +1,2 @@
 [workspace]
-members = ["apis"]
+members = ["basic_api", "adv_api"]
